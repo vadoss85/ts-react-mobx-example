@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "module": "es6",
+        "moduleResolution": "node",
+        "target": "es5",
+        "allowJs": true,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "useDefineForClassFields": true,
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": false,
+        "baseUrl": "src",
+        "paths": {
+            "@Assets/*": ["assets/*"],
+            "@UI/*": ["components/ui/*"],
+            "@Store/*": ["store/*"],
+        },
+        "typeRoots": [
+            "./node_modules/@types",
+            "./typings"
+        ],
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
