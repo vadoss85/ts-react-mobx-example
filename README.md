@@ -10,6 +10,7 @@ Example project to show my skills in selected stack of technologies
   - [Random user generator](https://randomuser.me)
 * Additional libraries and services
   - [Open layers](https://openlayers.org)
+  - [Highcharts](https://www.highcharts.com/)
 ## Building and running on localhost
 
 First install dependencies:
@@ -38,6 +39,11 @@ A fictional project to combine a stack of technologies and open API services.
   * Login info tab
   * Location tab. Here is implemented a [simple online map](https://openlayers.org) with dot on user's location coordinates
 
+### 1.1.0
+* Added Charts page with interval requests
+* Implemented 2 charts based on [open-source API](https://randomuser.me) response data
+  * Genders chart - collected genders data from last 10 requests
+  * Nationalities chart - nationalities ration in last request
 
 ## Credits
 
