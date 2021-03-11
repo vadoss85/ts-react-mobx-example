@@ -1,5 +1,5 @@
 import ApiTransport from "../ApiTransport";
-import { RandomUserQueryBuilder, RandomUserQueryBuilderArgs } from "./RandomUserQueryBuilder";
+import { RandomUserQueryBuilder, RandomUserQueryBuilderArgs, RandomUserQueryBuilderNationalities } from "./RandomUserQueryBuilder";
 
 interface RandomUserRequestArgs {
   seed?: string;
@@ -72,6 +72,7 @@ export interface RandomUser {
   phone: string;
   cell: string;
   email: string;
+  nat: RandomUserQueryBuilderNationalities;
 }
 
 export interface RandomUserRequestResponse {

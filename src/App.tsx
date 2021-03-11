@@ -7,12 +7,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PageUser from './components/pages/PageUser';
 import UILayoutHome from './components/ui/layout/UILayoutHome';
 import AppHeader from './components/layout/AppHeader';
+import AppMenu from './components/layout/menu/AppMenu';
+import PageCharts from './components/pages/charts/PageCharts';
 
 const App = () => {
   return (
     <Router>
       <UILayoutHome
         header={<AppHeader />}
+        menu={<AppMenu />}
         footer={null}
       >
         <Switch>
@@ -20,6 +23,9 @@ const App = () => {
             <PageHome
               store={store.pages.home}
             />
+          </Route>
+          <Route path={store.routes.charts}>
+            <PageCharts />
           </Route>
           <Route path={`${store.routes.user}:id`}>
             <PageUser />

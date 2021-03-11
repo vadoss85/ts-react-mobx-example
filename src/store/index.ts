@@ -1,4 +1,5 @@
 import { AppTheme } from "./AppTheme";
+import StorePageCharts from "./pages/charts";
 import StorePageHome from "./pages/home";
 import { AppRoutes } from "./Routes";
 
@@ -7,6 +8,7 @@ class Store {
   theme = new AppTheme();
   pages = {
     home: new StorePageHome(),
+    chart: new StorePageCharts(),
   }
 }
 
