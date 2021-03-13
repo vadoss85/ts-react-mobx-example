@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import React, { createRef, useEffect } from 'react'
 import { StyledComponent } from '../../configure/theme';
-import OlMap from "ol/map";
+import OlMap from "ol/Map";
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
