@@ -25,6 +25,8 @@ To run in hot module reloading mode:
 npm start
 ```
 
+To view in browser go to [Localhost](http://localhost:9000/) with provided port address (9000 by default)
+
 # Description
 A fictional project to combine a stack of technologies and open API services.
 
