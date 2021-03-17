@@ -2,9 +2,9 @@ import { Button, makeStyles, Theme } from '@material-ui/core';
 import UIFilterButton, { UIFilterButtonProps } from '@UI/filter/UIFilterButton';
 import UIFilterRow from '@UI/filter/UIFilterRow';
 import React, { useCallback } from 'react'
-import store from '@Store/index';
 import { observer } from 'mobx-react';
 import { UserGender } from '@Store/lists/randomUsers/RandomUsersList';
+import { useHomePageFilterStore } from '@Store/providers/home';
 
 const _componentDisplayName = 'UsersGender';
 
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>({
 }), {name: _componentDisplayName});
 
 const UsersGender = (props: UsersGenderProps) => {
-  const filter = store.pages.home.filter;
+  const filter = useHomePageFilterStore();
   const classes = useStyles(props);
   const onClick = useCallback(
     (val: UserGender) => {

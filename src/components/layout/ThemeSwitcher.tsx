@@ -1,20 +1,21 @@
 import UIThemeSwitcher from '@UI/layout/UIThemeSwitcher';
 import React from 'react';
-import store from '@Store/index';
-import { observer } from 'mobx-react';
+import { useThemeStore } from '@Store/providers';
+import { observer } from 'mobx-react-lite';
 const _componentDisplayName = 'AppThemeSwitcher';
 
 export interface AppThemeSwitcherProps {}
 
-const AppThemeSwitcher = (props: AppThemeSwitcherProps) => {
+const AppThemeSwitcher = observer((props: AppThemeSwitcherProps) => {
+  const theme = useThemeStore();
   return (
     <UIThemeSwitcher
-      theme={store.theme.current}
-      onThemeSwitch={store.theme.switchTheme}
+      theme={theme.current}
+      onThemeSwitch={theme.switchTheme}
     />
   );
-};
+});
 
 AppThemeSwitcher.displayName = _componentDisplayName;
 
-export default observer(AppThemeSwitcher);
+export default AppThemeSwitcher;

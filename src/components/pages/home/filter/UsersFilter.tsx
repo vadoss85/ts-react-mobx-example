@@ -1,5 +1,5 @@
 import { Button, makeStyles, Menu, Theme } from '@material-ui/core';
-import store from '@Store/index';
+import { useHomePageStore } from '@Store/providers/home';
 import UIFilter from '@UI/filter/UIFilter';
 import { StyledComponent } from 'configure/theme';
 import React from 'react'
@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>({
 export interface UsersFilterProps extends StyledComponent<typeof useStyles> {}
 
 const UsersFilter = (props: UsersFilterProps) => {
+  const home = useHomePageStore();
   const classes = useStyles(props);
   return (
     <div className={classes.root}>
@@ -44,7 +45,7 @@ const UsersFilter = (props: UsersFilterProps) => {
         <div className={classes.submitBlock}>
           <Button
             className={classes.submitButton}
-            onClick={store.pages.home.submitFilter}
+            onClick={home.submitFilter}
           >
             Apply
           </Button>

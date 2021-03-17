@@ -3,7 +3,7 @@ import StorePageCharts from "./pages/charts";
 import StorePageHome from "./pages/home";
 import { AppRoutes } from "./Routes";
 
-class Store {
+export class Store {
   routes = AppRoutes;
   theme = new AppTheme();
   pages = {

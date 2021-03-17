@@ -1,7 +1,7 @@
 import { chartSeriesCollection } from "@Store/collections/ChartSeriesCollection";
 import ChartSeriesModel, { ChartSeriesModelUpdateParams } from "@Store/models/ChartSeriesModel";
 import { RandomUserRequest } from "../../../API/RandomUser/RandomUserRequest";
-import { action, computed, flow, makeObservable } from "mobx";
+import { computed, flow, makeObservable } from "mobx";
 import { DataList } from "../DataList";
 import { RandomUserQueryBuilderNationalities } from "API/RandomUser/RandomUserQueryBuilder";
 

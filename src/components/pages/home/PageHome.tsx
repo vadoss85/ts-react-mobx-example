@@ -1,18 +1,16 @@
 import { Grid } from '@material-ui/core';
+import { useHomePageStore } from '@Store/providers/home';
 import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
-import StorePageHome from '../../../store/pages/home';
 import UIPageWidthContainer from '../../ui/UIPageWidthContainer';
 import UserCard from '../../user/UserCard';
 import UsersFilter from './filter/UsersFilter';
 import UserInfoDialog from './infoDialog/UserInfoDialog';
 
-interface PageHomeProps {
-  store: StorePageHome;
-}
+interface PageHomeProps {}
 
 const PageHome = observer((props: PageHomeProps) => {
-  const { store } = props;
+  const store = useHomePageStore();
   const { randomUsers } = store;
 
   useEffect(() => {
@@ -23,10 +21,6 @@ const PageHome = observer((props: PageHomeProps) => {
   }, []);
 
   randomUsers.initialLoad();
-
-  // if (!randomUsers.count) {
-  //   randomUsers.load();
-  // }
 
   return (
     <UIPageWidthContainer

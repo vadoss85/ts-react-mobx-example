@@ -6,12 +6,14 @@ import { getTheme } from './configure/theme';
 import App from './App';
 import { configureStore } from './configure/store';
 import { observer } from 'mobx-react';
-import store from './store';
 import { AppTheme } from './store/AppTheme';
+import { useGlobalStore } from '@Store/providers';
 
 var mountNode = document.getElementById('app-root');
 
 configureStore();
+
+const store = useGlobalStore();
 
 interface AppComponentProps {
   currentTheme: AppTheme

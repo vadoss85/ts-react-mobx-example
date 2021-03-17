@@ -1,14 +1,15 @@
 import React from 'react'
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
-import { observer } from 'mobx-react';
-import store from '@Store/index';
+import { observer } from 'mobx-react-lite';
+import { useChartNationalities } from '@Store/providers/charts';
 
 const _componentDisplayName = 'NationalitiesChart';
 
 export interface NationalitiesChartProps {}
 
-const NationalitiesChart = (props: NationalitiesChartProps) => { 
+const NationalitiesChart = observer((props: NationalitiesChartProps) => {
+  const nationalities = useChartNationalities();
   const options: Highcharts.Options = {
     chart: {
       type: 'column'
@@ -53,71 +54,71 @@ const NationalitiesChart = (props: NationalitiesChartProps) => {
         data: [
           {
             name: "AU",
-            y: store.pages.chart.charts.nationalities.AU,
+            y: nationalities.AU,
           },
           {
             name: 'BR',
-            y: store.pages.chart.charts.nationalities.BR,
+            y: nationalities.BR,
           },
           {
             name: 'CA',
-            y: store.pages.chart.charts.nationalities.CA,
+            y: nationalities.CA,
           },
           {
             name: 'CH',
-            y: store.pages.chart.charts.nationalities.CH,
+            y: nationalities.CH,
           },
           {
             name: 'DE',
-            y: store.pages.chart.charts.nationalities.DE,
+            y: nationalities.DE,
           },
           {
             name: 'DK',
-            y: store.pages.chart.charts.nationalities.DK,
+            y: nationalities.DK,
           },
           {
             name: 'ES',
-            y: store.pages.chart.charts.nationalities.ES,
+            y: nationalities.ES,
           },
           {
             name: 'FI',
-            y: store.pages.chart.charts.nationalities.FI,
+            y: nationalities.FI,
           },
           {
             name: 'FR',
-            y: store.pages.chart.charts.nationalities.FR,
+            y: nationalities.FR,
           },
           {
             name: 'GB',
-            y: store.pages.chart.charts.nationalities.GB,
+            y: nationalities.GB,
           },
           {
             name: 'IE',
-            y: store.pages.chart.charts.nationalities.IE,
+            y: nationalities.IE,
           },
           {
             name: 'IR',
-            y: store.pages.chart.charts.nationalities.IR,
+            y: nationalities.IR,
           },
           {
             name: 'NO',
-            y: store.pages.chart.charts.nationalities.NO,
+            y: nationalities.NO,
           },
           {
             name: 'NL',
-            y: store.pages.chart.charts.nationalities.NL,
+            y: nationalities.NL,
           },
           {
             name: 'NZ',
-            y: store.pages.chart.charts.nationalities.NZ,
+            y: nationalities.NZ,
           },
           {
             name: 'TR',
-            y: store.pages.chart.charts.nationalities.TR,
+            y: nationalities.TR,
           },
           {
             name: 'US',
-            y: store.pages.chart.charts.nationalities.US,
+            y: nationalities.US,
           }
         ]
       }
@@ -130,8 +131,8 @@ const NationalitiesChart = (props: NationalitiesChartProps) => {
       options={options}
     />
   );
-};
+});
 
 NationalitiesChart.displayName = _componentDisplayName;
 
-export default observer(NationalitiesChart);
+export default NationalitiesChart;

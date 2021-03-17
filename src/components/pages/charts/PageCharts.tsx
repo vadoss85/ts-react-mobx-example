@@ -1,16 +1,17 @@
 import React, { Fragment, useEffect } from 'react'
 import UIPageWidthContainer from '@UI/UIPageWidthContainer';
 import GendersChart from './charts/GendersChart';
-import store from '@Store/index';
 import NationalitiesChart from './charts/NationalitiesChart';
+import { useChartPageStore } from '@Store/providers/charts';
 
 const PageCharts = () => {
-  store.pages.chart.charts.load();
+  const chart = useChartPageStore();
+  chart.charts.load();
 
   useEffect(() => {
-    store.pages.chart.charts.run();
+    chart.charts.run();
     return () => {
-      store.pages.chart.charts.stop()
+      chart.charts.stop()
     }
   }, [])
 

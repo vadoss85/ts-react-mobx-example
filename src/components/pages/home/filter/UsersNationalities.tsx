@@ -1,11 +1,11 @@
 import { makeStyles, Theme } from '@material-ui/core';
 import { FilterValue } from '@Store/filter/FilterValue';
-import store from '@Store/index';
+import { useHomePageFilterStore } from '@Store/providers/home';
 import UIFilterButton from '@UI/filter/UIFilterButton';
 import UIFilterRow from '@UI/filter/UIFilterRow';
-import { GetNationalitiesListData, RandomUserQueryBuilderNationalities } from 'API/RandomUser/RandomUserQueryBuilder';
-import { observer } from 'mobx-react';
-import React, { useCallback, useMemo } from 'react'
+import { RandomUserQueryBuilderNationalities } from 'API/RandomUser/RandomUserQueryBuilder';
+import { observer } from 'mobx-react-lite';
+import React, { useCallback } from 'react'
 
 const _componentDisplayName = 'UsersNationalities';
 
@@ -48,8 +48,8 @@ const useStyles = makeStyles((theme: Theme) =>({
   },
 }), {name: _componentDisplayName});
 
-const UsersNationalities = (props: UsersNationalitiesProps) => {
-  const filter = store.pages.home.filter;
+const UsersNationalities = observer((props: UsersNationalitiesProps) => {
+  const filter = useHomePageFilterStore();
   const classes = useStyles(props);
   return (
     <UIFilterRow
@@ -67,8 +67,8 @@ const UsersNationalities = (props: UsersNationalitiesProps) => {
       ))}
     </UIFilterRow>
   );
-};
+});
 
 UsersNationalities.displayName = _componentDisplayName;
 
-export default observer(UsersNationalities);
+export default UsersNationalities;

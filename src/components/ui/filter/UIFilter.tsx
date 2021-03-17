@@ -24,7 +24,6 @@ const UIFilter = (props: UIFilterProps) => {
   const [anchor, setOpenState] = useState<HTMLButtonElement>(null)
   const onButtonClick = useCallback(
     (ev: React.MouseEvent<HTMLButtonElement>) => {
-      console.log(ev.currentTarget)
       setOpenState(ev.currentTarget)
     },
     [anchor],
@@ -50,6 +49,7 @@ const UIFilter = (props: UIFilterProps) => {
         anchorEl={anchor}
         getContentAnchorEl={null}
         autoFocus={false}
+        disableAutoFocusItem={true}
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'center',
@@ -60,6 +60,11 @@ const UIFilter = (props: UIFilterProps) => {
         }}
         classes={{
           paper: classes.menuRoot,
+        }}
+        MenuListProps={{
+          autoFocus: false,
+          autoFocusItem: false,
+          disabledItemsFocusable: true
         }}
       >
         <div>
