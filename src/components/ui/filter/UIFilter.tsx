@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>({
     minWidth: theme.spacing()*35,
     maxWidth: theme.spacing()*35,
   },
+  container: {
+    outline: 'none'
+  }
 }), {name: _componentDisplayName});
 
 export interface UIFilterProps extends StyledComponent<typeof useStyles> {
@@ -67,7 +70,7 @@ const UIFilter = (props: UIFilterProps) => {
           disabledItemsFocusable: true
         }}
       >
-        <div>
+        <div className={classes.container}>
           {children}
         </div>
       </Menu>
