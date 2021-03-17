@@ -1,5 +1,4 @@
 import { Button, ButtonProps, makeStyles, Theme } from '@material-ui/core';
-import { StyledComponent } from 'configure/theme';
 import React, { useCallback } from 'react'
 
 const _componentDisplayName = 'UIFilterButton';

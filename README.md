@@ -30,6 +30,9 @@ To view in browser go to [Localhost](http://localhost:9000/) with provided port 
 # Description
 A fictional project to combine a stack of technologies and open API services.
 
+## TODO
+- [ ] Add .tslint config
+
 ## Release log
 ### 1.0.0
 * Main layout for application
